@@ -1,23 +1,7 @@
 <h1>Edit your post</h1>
 
-<ul>
-<% if @article.errors.any? %>
-    <%= @article.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-    <% end %>
-<% end %>
-</ul>
+<%= render 'form' %>
 
-<%= form_with(model: @article, local:true) do |f| %>
-	<p>
-    	<%= f.label("Title") %><br/>
-    	<%= f.text_field("title") %>
-    </p>
-    <p>
-    	<%= f.label("Description") %><br/>
-    	<%= f.text_area("description") %>
-    </p>
-    <p>
-    	<%= f.submit %>
-    </p>
- <% end %>
+<h5><%= link_to 'Cancel editing', article_path(@article), data: {confirm: "Are you sure you want cancel editing?"} %> |
+<%= link_to 'Delete', article_path(params[:id]), method: :delete, data: {confirm: "Are you sure you want to delete this post?"} %>   
+</h5>

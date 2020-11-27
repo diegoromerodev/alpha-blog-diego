@@ -10,9 +10,7 @@
   </head>
 
   <body>
-    <% flash.each do |type, alert| %>
-      <h3><%= alert %></h3>
-    <% end %>
+    <%= render 'layouts/notices' %>
     <%= yield %>
   </body>
 </html>

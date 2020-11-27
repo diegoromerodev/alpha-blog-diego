@@ -1,11 +1,11 @@
 <h1>Welcome to my Blog!</h1>
-
+<h5><%= link_to 'Create new article', new_article_path %></h5>
 <table>
 	<thead>
 		<tr>
 			<th>Title</th>
 			<th>Description</th>
-			<th>Actions</th>
+			<th colspan="3">Actions</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -13,8 +13,12 @@
 			<tr>
 				<td><%= article.title %></td>
 				<td><%= article.description %></td>
-				<td>Show Edit Delete</td>
+				<td><%= link_to 'Show', article_path(article.id), method: :get %></td>
+				<td><%= link_to 'Edit', edit_article_path(article.id), method: :get %></td>
+				<td><%= link_to 'Delete', article_path(article.id), method: :delete %></td>
 			</tr>
 		<% end -%>
 	</tbody>
 </table>
+
+<h6><%= link_to 'Go to the home page instead', root_path %></h6>
