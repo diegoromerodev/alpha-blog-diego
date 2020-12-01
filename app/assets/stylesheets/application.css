@@ -1,12 +1,5 @@
-h1 {
-	font-family: "Segoe UI";
-	font-weight:600;
-}
-p {
-	font-family: "Segoe UI";
-	font-size: 20px;
-}
-
-* {
-	font-family: "Segoe UI"
-}
+/*
+*= require bootstrap
+*= require_tree .
+*= require_self
+*/

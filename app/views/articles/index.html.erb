@@ -1,24 +1,37 @@
-<h1>Welcome to my Blog!</h1>
-<h5><%= link_to 'Create new article', new_article_path %></h5>
-<table>
-	<thead>
-		<tr>
-			<th>Title</th>
-			<th>Description</th>
-			<th colspan="3">Actions</th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @articles.each do |article| %>
-			<tr>
-				<td><%= article.title %></td>
-				<td><%= article.description %></td>
-				<td><%= link_to 'Show', article_path(article.id), method: :get %></td>
-				<td><%= link_to 'Edit', edit_article_path(article.id), method: :get %></td>
-				<td><%= link_to 'Delete', article_path(article.id), method: :delete %></td>
-			</tr>
-		<% end -%>
-	</tbody>
-</table>
+<div class="text-center">
+	<h1>All Articles</h1>
+	<h5><%= link_to 'Create new article', new_article_path, class: "btn btn-info" %></h5>
 
-<h6><%= link_to 'Go to the home page instead', root_path %></h6>
+<div class="container">
+	<% @articles.each do |article| %>
+	  <div class="row justify-content-md-center">
+	    <div class="col-8 mt-4">
+			<div class="card text-center shadow-lg mb-5 bg-white rounded">
+				  <div class="card-header font-italic">
+				    by Diego Romero
+				  </div>
+				  <div class="card-body">
+				    <h5 class="card-title"><%= link_to article.title, article_path(article), class: "text-info" %></h5>
+				    <p class="card-text"><%= truncate(article.description, length: 40) %></p>
+				    <%= link_to 'View', article_path(article), class: "btn btn-outline-info" %>
+				    <%= link_to 'Edit', edit_article_path(article), class: "btn btn-outline-success" %>
+				    <%= link_to 'Delete', article_path(article), method: :delete, class: "btn btn-outline-danger", data: {confirm: "Are you sure?"} %>
+				  </div>
+				  <div class="card-footer text-muted">
+				    <small>Created <%= time_ago_in_words(article.created_at) %> ago,
+				    	Updated <%= time_ago_in_words(article.updated_at) %> ago</small>
+				  </div>
+				</div>
+			</div>
+		</div>
+		<% end %>
+	</div>
+</div>
+
+<div class="container mb-5">
+	<div class="row justify-content-md-center mt-4">
+		<div class="col-8">
+			<h6 class="text-left"><%= link_to 'Go to the home page instead', root_path, class: "btn btn-info" %></h6>
+		</div>
+	</div>
+</div>

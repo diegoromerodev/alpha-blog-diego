@@ -1,5 +1,6 @@
-<h1>Create a new post!</h1>
-
+<h1 class="text-center font-italic font-weight-light mb-5">Create a new post</h1>
 <%= render 'form' %>
-
-<h5><%= link_to 'Cancel creation', articles_path, data: {confirm: "Are you sure you want cancel creation?"} %> |
+<div class="text-center">
+	<h5><%= link_to 'Cancel editing', articles_path, class: "btn btn-warning", data: {confirm: "Are you sure you want cancel editing?"} %>
+	</h5>
+</div>
