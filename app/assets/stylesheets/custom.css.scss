@@ -1,0 +1,93 @@
+@import 'bootstrap/dist/css/bootstrap';
+
+body {
+	background: rgb(238,174,202);
+	background: -moz-linear-gradient(211deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+	background: -webkit-linear-gradient(211deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+	background: linear-gradient(211deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eeaeca",endColorstr="#94bbe9",GradientType=1);
+}
+
+.big-menu-font {
+	font-size: 200%;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+
+#navbarSupportedContent {
+	padding-right: 10%;
+}
+
+.navbar-brand {
+	font-size: 200%;
+	font-weight: bolder;
+    letter-spacing: -0.05em;
+}
+
+html{
+    height: 100%;
+}
+
+body {
+	height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#jumbocont {
+	width: 70%;
+	padding-top: 5%;
+}
+
+.jumbotron {
+	font-weight: bolder !important;
+	border-radius: 0;
+	text-align: center;
+	background: white;
+	background-image: url('jumbo.jpg');
+	background-size: cover;
+	background-position: 0, 0;
+	height: 425px;
+}
+
+.display-4 {
+	font-weight: bolder !important
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+}
+
+.footer-text {
+	font-weight: bold;
+	color: light-gray;
+}
+
+.links {
+	text-align: center;
+}
+
+.links a {
+	font-style: normal;
+	color: black;
+}
+
+.links a:hover {
+	color: grey;
+}
+
+#cards-size {
+	min-width: 100%;
+}
