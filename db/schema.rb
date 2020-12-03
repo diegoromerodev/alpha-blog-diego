@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_03_143651) do
+ActiveRecord::Schema.define(version: 2020_12_03_171249) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -20,7 +20,19 @@ ActiveRecord::Schema.define(version: 2020_12_03_143651) do
     t.integer "user_id"
   end
 
-# Could not dump table "users" because of following StandardError
-#   Unknown type 'false' for column 'admin'
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
+    t.boolean "admin", default: false
+  end
 
 end
