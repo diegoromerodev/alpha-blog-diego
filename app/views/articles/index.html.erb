@@ -2,31 +2,11 @@
 	<h1>All Articles</h1>
 	<h5><%= link_to 'Create new article', new_article_path, class: "btn btn-info" %></h5>
 
-<div class="container">
-	<% @articles.each do |article| %>
-	  <div class="row justify-content-md-center">
-	    <div class="col-8 mt-4">
-			<div class="card text-center shadow-lg mb-5 bg-white rounded">
-				  <div class="card-header font-italic">
-				    by <%= article.user.name %>
-				  </div>
-				  <div class="card-body">
-				    <h5 class="card-title"><%= link_to article.title, article_path(article), class: "text-info" %></h5>
-				    <p class="card-text"><%= truncate(article.description, length: 40) %></p>
-				    <%= link_to 'View', article_path(article), class: "btn btn-outline-info" %>
-				    <%= link_to 'Edit', edit_article_path(article), class: "btn btn-outline-success" %>
-				    <%= link_to 'Delete', article_path(article), method: :delete, class: "btn btn-outline-danger", data: {confirm: "Are you sure?"} %>
-				  </div>
-				  <div class="card-footer text-muted">
-				    <small>Created <%= time_ago_in_words(article.created_at) %> ago,
-				    	Updated <%= time_ago_in_words(article.updated_at) %> ago</small>
-				  </div>
-				</div>
-			</div>
-		</div>
-		<% end %>
-	</div>
+<div class="flickr_pagination mt-4">
+	<%= will_paginate @articles, :container => false %>
 </div>
+
+<%= render 'articles' %>
 
 <div class="container mb-5">
 	<div class="row justify-content-md-center mt-4">
@@ -34,4 +14,8 @@
 			<h6 class="text-left"><%= link_to 'Go to the home page instead', root_path, class: "btn btn-info" %></h6>
 		</div>
 	</div>
+</div>
+
+<div class="flickr_pagination mb-4">
+	<%= will_paginate @articles, :container => false %>
 </div>
