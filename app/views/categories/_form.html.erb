@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <%= render 'shared/alerts', obj: @category %>
+        </div>
+    </div>
+    <%= form_with(model: @category, local:true) do |f| %>
+    <div class="row justify-content-center shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="col-12">
+            <div class="form-group">
+                <%= f.label :name, class: "h4 font-weight-bold" %><br/>
+                <%= f.text_field :name, class: "form-control shadow-sm rounded", placeholder: "Pick a category name" %>
+            </div>
+        </div>
+        <%= f.submit class: "btn btn-info btn-lg mt-2 mb-2" %>
+    </div>
+    <% end %>
+</div>

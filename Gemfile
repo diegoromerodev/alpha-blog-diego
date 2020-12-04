@@ -29,6 +29,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
  # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'sqlite3', '~> 1.4'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -38,7 +40,6 @@ end
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
-  gem 'sqlite3', '~> 1.4'
 end
 
 group :test do
